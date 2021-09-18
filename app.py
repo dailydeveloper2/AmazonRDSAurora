@@ -8,12 +8,12 @@ app = Flask(__name__)
 my_config = Config(
     region_name = 'us-east-1'
 )
-rds_data = boto3.client('rds-data', config=my_config, aws_access_key_id='TODO', aws_secret_access_key='TODO')
+rds_data = boto3.client('rds-data', config=my_config, aws_access_key_id='AKIAW36O5GWB43YEMAVG', aws_secret_access_key='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')
 
 #Database Configuration Items
-aurora_db_name = 'TODO' #os.environ['DB_NAME']
-aurora_cluster_arn = 'TODO' #os.environ['CLUSTER_ARN']
-aurora_secret_arn = 'TODO' #os.environ['SECRET_ARN']
+aurora_db_name = 'mydB' #os.environ['DB_NAME']
+aurora_cluster_arn = 'database-1.cluster-ckranhfl0sdr.us-east-1.rds.amazonaws.com' #os.environ['CLUSTER_ARN']
+aurora_secret_arn = 'arn:aws:secretsmanager:us-east-1:472343459203:secret:AuroraServerlessDemoCredentials-j5KDAr' #os.environ['SECRET_ARN']
 
 @app.route('/getPerson') # API 1 - getPerson
 def getPerson():
